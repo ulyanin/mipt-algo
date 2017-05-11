@@ -32,6 +32,7 @@ vector<int> build_lcp(const string &str, const vector<int> &suf)
             lcp[p] = max(0, lcp[pos[i - 1]] - 1);
         }
         if (p != n - 1) {
+            cout << "! " << i << " " << p << " " << i << " " << suf[p + 1] << " " << pos[i - 1]<< endl;
             while (str[suf[p] + lcp[p]] == str[suf[p + 1] + lcp[p]])
                 ++lcp[p];
         }
@@ -42,7 +43,7 @@ vector<int> build_lcp(const string &str, const vector<int> &suf)
 int main()
 {
 #ifdef LOCAL
-    freopen("input.txt", "r", stdin);
+    //freopen("input.txt", "r", stdin);
 //    freopen("output.txt", "w", stdout);
 #endif
     scanf("%d\n", &n);
